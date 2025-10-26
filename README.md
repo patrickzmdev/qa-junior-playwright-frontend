@@ -1,0 +1,66 @@
+Automação Web - Sauce Demo (Playwright)
+
+Projeto de automação de testes E2E para o site [Sauce Demo](https://www.saucedemo.com) utilizando Playwright com TypeScript, seguindo boas práticas de Page Object Model (POM) e fixtures customizadas.
+
+Tecnologias Utilizadas
+
+- Playwright - Framework de automação
+- TypeScript - Linguagem tipada
+- Node.js - Ambiente de execução
+- dotenv - Gerenciamento de variáveis de ambiente
+
+Antes de começar, certifique-se de ter instalado:
+
+- Node.js (versão 18 ou superior)
+- npm ou yarn
+- Git
+
+Instalação
+
+Clonar o repositório
+
+git clone https://github.com/patrickzmdev/qa-junior-playwright-frontend.git
+
+Instalar dependências
+
+npm install
+
+Instalar navegadores do Playwright
+
+npx playwright install
+
+Nota: Este comando baixa os navegadores necessários (Chromium, Firefox, WebKit).
+
+Configuração
+
+Configurar variáveis de ambiente
+
+1. Copie o arquivo `.env.example` para `.env`:
+
+2. Edite o arquivo `.env` com suas credenciais:
+
+.env
+BASE_URL=https://www.saucedemo.com
+STANDARD_USER=standard_user
+STANDARD_PASS=secret_sauce
+INVALID_USER=invalid_user
+INVALID_PASS=invalid_pass
+```
+
+IMPORTANTE: 
+O arquivo `.env` está no `.gitignore` e **nunca será comitado**
+Nunca compartilhe credenciais reais em repositórios públicos
+Para ambientes de CI/CD, use secrets do GitHub/GitLab
+
+Execução dos Testes
+
+Comandos disponíveis
+
+# Executar todos os testes (headless)
+npx playwright test
+
+# Executar com interface visual (navegador visível)
+npx playwright test --headed
+
+# Executar em modo UI (interface gráfica interativa)
+npx playwright test --ui
