@@ -1,7 +1,7 @@
 import { test } from "../support/index";
 import { users } from "../support/fixtures/users";
 
-test.describe("Cenários de Login", () => {
+test.describe("Cenários de login", () => {
   test.beforeEach(async ({ loginPage }) => {
     await loginPage.visit();
   });

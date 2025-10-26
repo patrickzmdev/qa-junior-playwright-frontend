@@ -2,7 +2,7 @@ import { users } from "../support/fixtures/users";
 import { test } from "../support/index";
 import { Header } from "../support/fixtures/components/Header";
 
-test.describe("Cenários de Carrinho de Compras", () => {
+test.describe("Cenários de carrinho de compras", () => {
   test.beforeEach(async ({ loginPage, inventPage }) => {
     await loginPage.visit();
     await loginPage.loginUser(
@@ -32,7 +32,7 @@ test.describe("Cenários de Carrinho de Compras", () => {
     await cartPage.validateCardIsEmpty();
   });
 
-  test("finalizar uma compra com 2 ou mais produtos no carrinho", async ({
+  test("deve finalizar uma compra com 2 produtos corretamente", async ({
     inventPage,
     cartPage,
     checkOutPage,
@@ -59,6 +59,8 @@ test.describe("Cenários de Carrinho de Compras", () => {
     await checkOutPage.clickOnContinueButton();
     await checkOutSummaryPage.validateQuantityOfItemsInSummary(items.length);
     await checkOutSummaryPage.clickOnFinishButton();
-    await checkOutCompletePage.validateMessageOrder("Thank you for your order!");
+    await checkOutCompletePage.validateMessageOrder(
+      "Thank you for your order!"
+    );
   });
 });

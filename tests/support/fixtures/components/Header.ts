@@ -10,12 +10,14 @@ export class Header {
 
     async clickingCart() {
         const cartButton = this.page.locator('a[data-test="shopping-cart-link"]');
+        await this.shouldBeVisible();
         await expect(cartButton).toBeVisible();
         await cartButton.click();
     }
 
     async checkCartItemsCount(expectedCount: number) {
         const cartBadge = this.page.locator('span[data-test="shopping-cart-badge"]');
+        await this.shouldBeVisible();
         await expect(cartBadge).toHaveText(expectedCount.toString());
     }
 }
