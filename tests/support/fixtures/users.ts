@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import { User } from "./interfaces/User";
+import { IUser } from "./interfaces/User";
 dotenv.config();
 
 const getEnvOrThrow = (key: string): string => {
@@ -16,10 +16,10 @@ export const users = {
   standardUser: {
     username: getEnvOrThrow("STANDARD_USER"),
     password: getEnvOrThrow("STANDARD_PASS"),
-  } as User,
+  } as IUser,
 
   invalidUser: {
     username: getEnvOrThrow("INVALID_USER"),
     password: getEnvOrThrow("INVALID_PASS"),
-  } as User,
+  } as IUser,
 };
