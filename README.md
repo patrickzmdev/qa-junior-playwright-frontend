@@ -66,10 +66,10 @@ cp .env.example .env
 
 ```env
 BASE_URL=https://www.saucedemo.com
-STANDARD_USER=standard_user
-STANDARD_PASS=secret_sauce
-INVALID_USER=invalid_user
-INVALID_PASS=invalid_pass
+STANDARD_USER=usuario_válido
+STANDARD_PASS=senha_válida
+INVALID_USER=usuario_inválido
+INVALID_PASS=senha_inválida
 ```
 
 > **IMPORTANTE:**  
